@@ -9,10 +9,10 @@ function generateVideo() {
     if (videoId) {
         videoContainer.innerHTML = `<div id="player"></div>`;
         onYouTubeIframeAPIReady(videoId);
-        document.getElementById('toggle-captions').style.display = 'block'; // Show the toggle captions button
+        document.getElementById('toggle-captions').style.display = 'inline-block';
     } else {
         videoContainer.innerHTML = '<p>Please enter a valid YouTube link.</p>';
-        document.getElementById('toggle-captions').style.display = 'none'; // Hide the toggle captions button
+        document.getElementById('toggle-captions').style.display = 'none';
     }
 }
 
@@ -21,22 +21,15 @@ function onYouTubeIframeAPIReady(videoId) {
         height: '315',
         width: '560',
         videoId: videoId,
-        events: {
-            'onReady': onPlayerReady
+        playerVars: {
+            'cc_load_policy': captionsEnabled ? 1 : 0
         }
     });
 }
 
-function onPlayerReady(event) {
-    toggleCaptions(); // Enable captions by default
-}
-
 function toggleCaptions() {
     captionsEnabled = !captionsEnabled;
-    if (captionsEnabled) {
-        player.loadModule('captions');
-        player.setOption('captions', 'track', {'languageCode': 'en'});
-    } else {
-        player.unloadModule('captions');
-    }
+    const videoId = player.getVideoData().video_id;
+    player.destroy();
+    onYouTubeIframeAPIReady(videoId);
 }
