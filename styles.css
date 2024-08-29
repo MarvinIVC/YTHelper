@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
     background: linear-gradient(to right, #ece9e6, #ffffff);
     font-family: 'Roboto', sans-serif;
@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-/* Container Styles */
+
 .container {
     text-align: center;
     background: #ffffff;
@@ -25,7 +25,6 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Title Styles */
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
@@ -34,7 +33,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Input Group Styles */
 .input-group {
     margin-top: 20px;
     display: flex;
@@ -78,7 +76,7 @@ button:active {
     transform: translateY(0);
 }
 
-/* Video Container Styles */
+
 #video-container {
     margin-top: 30px;
 }
@@ -89,7 +87,7 @@ iframe {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Keyframes for Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
