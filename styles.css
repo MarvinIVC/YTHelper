@@ -86,7 +86,25 @@ iframe {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
 
+.footer-text {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.footer-heart {
+    width: 24px;
+    height: 24px;
+}
 
 @keyframes fadeIn {
     from {
